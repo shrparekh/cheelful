@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'ostrich';
+    src: url('../assets/fonts/ostrich-regular.ttf') format('truetype'); /* For TTF files */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'life';
+    src: url('../assets/fonts/Life\ is\ goofy.ttf') format('truetype'); /* For TTF files */
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --primary-color:#FCEDA9;
+    --primary-yellow:#FFA733;
+    --blue-color:#0163C6;
+    -blue-color-second:#316ADF;
+    --secondary-color:#E63747;
+    --green-color:#009455;
+    --black-color:#000;
+    --white-color:#fff;
+    --main-font:'life', sans-serif;
+    --body-font:"Public Sans", sans-serif;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: var(--body-font);
+    background-color: var(--primary-color);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    color: var(--white-color);
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--bs-heading-color, inherit);
+    font-family: var(--body-font);
+}
+.btn-primary{
+
+}
+
+
+.navbar-brand img {
+    width: 20%;
+    margin-right: 8px;
+  }
+  .navbar-brand span{
+    font-size: 36px;
+    font-family: var(--main-font);
+  }  
+
+  .navbar-nav .nav-link {
+    color: #e91e63 !important;
+    font-weight: bold;
+    font-family: var(--body-font);
+    font-size: 18px;
+    font-weight: 800;
+    margin: 0px 8px;
+  }
+
+  @media screen and (max-width: 1300px) {
+    .navbar-nav .nav-link {
+    color: #e91e63 !important;
+    font-weight: bold;
+    font-family: var(--body-font);
+    font-size: 14px;
+    font-weight: 800;
+    margin: 0px 8px;
+  }
+  }
+  @media screen and (max-width: 400px) {
+    .navbar-light .navbar-brand {
+       width: 75%;
+  }
+  .navbar-brand img {
+    width: 22%;
+    margin-right: 8px;
+  }
+  .navbar-brand span{
+    font-size: 35px;
+    font-family: var(--main-font);
+  }
+  }
+
+  .offcanvas {
+    background-color: #fff3cd;
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .offcanvas-backdrop.show {
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .btn-outline-danger {
+    font-size: 1.5rem;
+    border: none;
+  }
+.main-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-top: 50px;
+  }
+  
+  .description {
+    font-size: 1.3rem;
+    color: #176857;
+  }
+  
+  .polaroid-container {
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  .polaroid {
+    width: 140px;
+    border: 8px solid white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    position: absolute;
+    transition: transform 0.3s ease;
+  }
+  
+  .rotate-1 { top: -80px; left: 5%; transform: rotate(-15deg); }
+  .rotate-2 { top: 20px; left: 20%; transform: rotate(10deg); }
+  .rotate-3 { top: -60px; left: 38%; transform: rotate(-10deg); }
+  .rotate-4 { top: 30px; right: 25%; transform: rotate(12deg); }
+  .rotate-5 { top: -90px; right: 8%; transform: rotate(-15deg); }
+  .rotate-6 { bottom: -100px; left: 45%; transform: rotate(8deg); }
+  
+  @media screen and (max-width: 768px) {
+    .polaroid {
+      display: none;
+    }
+  }
