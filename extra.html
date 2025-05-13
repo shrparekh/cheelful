@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMA Connect</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+      .lightbox {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #000;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
+  }
+  
+  .lightbox-content {
+    height: 100%;
+    border-radius: 12px;
+    width: 100%;
+    max-width:100%;
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column;
+   
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 35px;
+    background: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .lightbox-header {
+    text-align: left;
+    padding: 20px;
+   
+  }
+  
+  .left-section .lightbox-header h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #fff;
+  }
+  
+  .left-section .lightbox-header p {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #fff;
+    padding: 10px 0px;
+  }
+  
+  .lightbox-main {
+    display: flex;
+   
+    gap: 5px;
+  }
+  
+  .left-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #013a7b;
+    padding: 20px 40px;
+  }
+  .icon-section{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+  }
+  .icon-box {
+    display: flex;
+    justify-content: column;
+    align-items: center;
+    gap: 2px;
+    background: #013a7b;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .icon-box img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .icon-box p {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .right-section {
+    width: 50%;
+    background-color: green;
+    padding: 20px 40px;
+  }
+  
+  .right-section p {
+    margin: 0 0 10px 0;
+  }
+  
+  .right-section ul {
+    padding-left: 20px;
+    margin: 0;
+  }
+  
+  .right-section ul li {
+    margin-bottom: 10px;
+    list-style-type: disc;
+    
+  }
+  
+  .right-section ul li span {
+    font-weight: bold;
+  }
+  .lightbox-img{
+    width: 100%;
+   padding: 5px;
+  }
+  .lightbox-img img{
+   height: 250px;
+   width: 100%;
+   
+  }
+  .lightbox-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   gap: 5px;
+  }
+  
+  .prev-btn  {
+    
+    border: 1px solid #000;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    background: orangered;
+    width: 100%;
+    text-align: left;
+    padding: 10px 20px;
+  }
+  .next-btn{
+    border: 1px solid #000;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    background: orangered;
+    width: 100%;
+    text-align: right;
+    padding: 10px 20px;
+  }
+  
+  </style>
+</head>
+<body>
+
+<div id="lightbox" class="lightbox">
+      <div class="lightbox-content">
+        <button class="close-btn">×</button>
+        
+        <div class="lightbox-main">
+          <div class="left-section">
+            <div class="lightbox-header">
+              <h2>GRAMMAR AND CREATIVE WRITING</h2>
+              <p>FOR AGES: 6 AND ABOVE</p>
+            </div>
+            <div class="icon-section">
+              <div class="icon-box">
+                <img src="assets/icons/interactive.png" alt="Interactive Classes">
+                <p>Interactive Classes</p>
+              </div>
+              <div class="icon-box">
+                <img src="assets/icons/language.png" alt="Language Development">
+                <p>Language Development</p>
+              </div>
+              <div class="icon-box">
+                <img src="assets/icons/confidence.png" alt="Confidence Building">
+                <p>Confidence Building</p>
+              </div>
+            </div>
+          </div>
+          <div class="right-section">
+            <p>
+              In our Playgroup program, we focus on fostering early development
+              through engaging activities designed to promote fine motor skills, cognitive growth, and communication abilities:
+            </p>
+            <ul>
+              <li><span>Interactive Learning:</span> Master language fundamentals through interactive and engaging activities that make learning fun.</li>
+              <li><span>Language Skills Improvement:</span> Enhance sentence structure, punctuation, and parts of speech, building a solid foundation in language skills.</li>
+              <li><span>Confidence Building:</span> Develop confidence in written and spoken communication, preparing students for success in school and beyond.</li>
+            </ul>
+          </div>
+          
+        </div>
+  
+        <div class="lightbox-img">
+          <img src="assets/images/p1.jpeg" alt="">
+        </div>
+        <div class="lightbox-footer">
+          <button class="prev-btn">← JOLLY PHONICS AND VOCABULARY</button>
+          
+          <button class="next-btn">TRINITY SPEECH AND DRAMA →</button>
+        </div>
+      </div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
