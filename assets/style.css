@@ -134,6 +134,162 @@ h6,
   transition: 0s;
   transform: translate(0, 5%);
 }
+/* preloader css start */
+
+/* Base Styles */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--primary-color);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px; /* Added padding for better spacing on smaller screens */
+  text-align: center; /* Center-align text for responsiveness */
+}
+
+#preloader .loader img {
+  width: 180px;
+  animation: bounce 1.5s infinite;
+}
+
+#preloader .loader p {
+  font-family: var(--secondary-font);
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 3.5rem;
+  color: #e74c3c;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Ensure text and dots wrap on smaller screens */
+}
+
+#preloader .loader p .dots {
+  display: flex;
+  margin-left: 10px;
+}
+
+#preloader .loader p .dots .dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: 20px 3px 0px;
+  animation: fade 1.2s infinite;
+}
+
+#preloader .loader p .dots .dot:nth-child(1) {
+  animation-delay: 0s;
+}
+#preloader .loader p .dots .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+#preloader .loader p .dots .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+#preloader .loader p .dots .dot:nth-child(4) {
+  animation-delay: 0.6s;
+}
+#preloader .loader p .dots .dot:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fade {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #preloader .loader img {
+    width: 150px; /* Reduce image size for smaller screens */
+  }
+
+  #preloader .loader p {
+    font-size: 2.5rem; /* Adjust font size */
+    margin-top: 10px;
+  }
+
+  #preloader .loader p .dots .dot {
+    width: 10px; /* Reduce dot size for smaller screens */
+    height: 10px;
+    margin: 15px 2px 0px;
+  }
+}
+
+@media (max-width: 480px) {
+  #preloader .loader img {
+    width: 120px; /* Further reduce image size for very small screens */
+  }
+
+  #preloader .loader p {
+    font-size: 1.8rem; /* Adjust font size */
+  }
+
+  #preloader .loader p .dots .dot {
+    width: 9px; /* Adjust dot size */
+    height: 9px;
+  }
+}
+@media (max-width: 380px) {
+  #preloader .loader img {
+    width: 100px; /* Further reduce image size for very small screens */
+  }
+
+  #preloader .loader p {
+    font-size: 1.5rem; /* Adjust font size */
+  }
+
+  #preloader .loader p .dots .dot {
+    width: 9px; /* Adjust dot size */
+    height: 9px;
+  }
+}
+
+@media (max-width: 350px) {
+  #preloader .loader img {
+    width: 80px; /* Further reduce image size for very small screens */
+  }
+
+  #preloader .loader p {
+    font-size: 1.3rem; /* Adjust font size */
+  }
+
+  #preloader .loader p .dots .dot {
+    width: 6px; /* Adjust dot size */
+    height: 6px;
+  }
+}
+
+
+
+
+
+
+
+/* preloader css end */
+
+/* Header css */
 .navbar {
   transition: all 0.3s ease;
 }

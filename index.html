@@ -12,50 +12,6 @@
   <script src="https://kit.fontawesome.com/c80ce35b53.js" crossorigin="anonymous"></script>
  <style>
 
-
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: white;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-#preloader .loader img {
-  width: 100px;
-  animation: bounce 1.5s infinite;
-}
-
-#preloader .loader p {
-  font-weight: bold;
-  color: #e74c3c;
-  margin-top: 15px;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-
-
-
-
-
-
-
-
-
   .gallery-frame {
   cursor: pointer;
 }
@@ -318,9 +274,19 @@
 <div id="preloader">
   <div class="loader">
     <img src="assets/images/logo.png" alt="Loading..." />
-    <p>Loading...</p>
+    <p>
+      Loading Your Child's Future
+      <span class="dots">
+        <span class="dot" style="background-color: #e74c3c;"></span>
+        <span class="dot" style="background-color: #3498db;"></span>
+        <span class="dot" style="background-color: #2ecc71;"></span>
+        <span class="dot" style="background-color: #f1c40f;"></span>
+        <span class="dot" style="background-color: #9b59b6;"></span>
+      </span>
+    </p>
   </div>
 </div>
+
 
 
 
