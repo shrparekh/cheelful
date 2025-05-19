@@ -880,6 +880,11 @@ h6,
 }
 }
 
+@media screen and (max-width: 380px){
+.cards-wrapper .card h3{
+  font-size: 1.2rem !important;
+}
+}
 
 .cards-wrapper .card h3 {
   font-size: 1.3rem;
