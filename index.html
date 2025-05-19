@@ -11,6 +11,51 @@
   <link rel="stylesheet" href="assets/style.css">
   <script src="https://kit.fontawesome.com/c80ce35b53.js" crossorigin="anonymous"></script>
  <style>
+
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#preloader .loader img {
+  width: 100px;
+  animation: bounce 1.5s infinite;
+}
+
+#preloader .loader p {
+  font-weight: bold;
+  color: #e74c3c;
+  margin-top: 15px;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+
+
+
+
+
+
+
+
+
   .gallery-frame {
   cursor: pointer;
 }
@@ -144,6 +189,11 @@
   align-items: center;
 }
  }
+
+
+
+
+
  @media screen and (max-width: 500px){
   .popup-controls {
   position: absolute;
@@ -166,11 +216,11 @@
     transition: background 0.3s;
 }
  .prev-btn-a {
-  right: 200px;
+  right: 175px !important;
 }
 
 .next-btn-a {
-  left: 200px;
+  left: 175px !important;
 }
 .popup-content {
   position: relative;
@@ -188,13 +238,7 @@
   justify-content: center;
   align-items: center;
 }
-.popup-frame img {
- position: relative;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
- 
-}
+
  }
 
  @media screen and (max-width: 420px){
@@ -256,11 +300,11 @@
 
 }
 .prev-btn-a {
-  right: 140px;
+  right: 140px !important;
 }
 
 .next-btn-a {
-  left: 140px;
+  left: 140px !important;
 }
  }
  
@@ -270,6 +314,16 @@
 </head>
 
 <body>
+
+<div id="preloader">
+  <div class="loader">
+    <img src="assets/images/logo.png" alt="Loading..." />
+    <p>Loading...</p>
+  </div>
+</div>
+
+
+
 
   <!-- Navbar section start -->
   <nav class="navbar navbar-light  px-3 py-2">
@@ -1015,7 +1069,19 @@
   
   <script src="assets/js/main.js"></script>
 
-  
+<script>
+  // Wait for 5 seconds then hide the preloader
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      const preloader = document.getElementById("preloader");
+      preloader.style.opacity = '0';
+      preloader.style.transition = 'opacity 0.5s ease';
+      setTimeout(() => preloader.style.display = 'none', 500); // Fully remove after fade
+    }, 2000); // 5000ms = 5 seconds
+  });
+</script>
+
+
 
 </body>
 
