@@ -1344,6 +1344,8 @@ h6,
 }
 .wave-bottom{
   margin-top: -20px;
+  height: 80px;
+  z-index: 1000;
 }
 .program-section {
   background-color: #316ADF    ;
@@ -1726,7 +1728,7 @@ h6,
 
 /* Testimonial Grid */
 .testinomial{
- padding: 200px 0px 80px; 
+ padding: 270px 0px 80px; 
  background-image: url('images/bg1.png'); /* Replace with your image URL */
  background-size: cover;
  background-position: center;
@@ -1734,6 +1736,7 @@ h6,
  height: 100%;
  margin-top:-80px;
  background-attachment: fixed;
+ z-index: -1;
 }
 .testinomial .welcome-btn {
   display: inline-block;
