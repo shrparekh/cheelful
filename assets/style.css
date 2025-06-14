@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap');
+
 @font-face {
     font-family: 'ostrich';
     src: url('../assets/fonts/ostrich-regular.ttf') format('truetype'); /* For TTF files */
@@ -31,7 +33,7 @@
     --orange-color:#F46020;
     --main-font:'life', sans-serif;
     --body-font:"Public Sans", sans-serif;
-    --secondary-font:"heavy",sans-serif;
+    --secondary-font:"ostrich",sans-serif;
 }
 *,
 *::before,
@@ -420,12 +422,12 @@ h6,
   }
 .main-title {
   font-size: 7.8rem;
-  font-weight: bolder;
+  font-weight: 900;
   /* margin-top: 50px; */
   font-family: var(--secondary-font);
   padding-top: 20px;
-  line-height: 6.5rem;
-
+  line-height: 6.7rem;
+  letter-spacing: 3px;
    
   }
   .cloud{
@@ -443,9 +445,9 @@ background-image: url('../assets/images/coud-removebg-preview.png');
   }
   .description {
     font-size: 1.6rem;
-    line-height: 1.6rem;
+    line-height: 1.7rem;
     color: #176857;
-    font-weight: 800;
+    font-weight: bolder;
     font-family: var(--secondary-font);
     top: 15px;
     position: relative;
@@ -1310,10 +1312,11 @@ background-image: url('../assets/images/coud-removebg-preview.png');
   color: #d9324d;
   font-size: 3.8rem;
   text-align: center;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 20px;
   padding: 20px 20px 5px ;
   font-family: var(--secondary-font);
+  letter-spacing: 2px;
 }
 
 .section-service .desc {
@@ -1649,6 +1652,7 @@ animation: flipFlop 2s infinite ease-in-out;
   padding: 20px 20px 5px ;
   font-family: var(--secondary-font);
   line-height: 5rem;
+  letter-spacing: 2px;
 }
 
 .about-section .desc {
@@ -2977,6 +2981,7 @@ animation: flipFlop 2s infinite ease-in-out;
   font-size:3rem;
   margin-bottom: 10px;
   font-family: var(--secondary-font);
+  letter-spacing: 2px;
 }
 
 .form-header p {
