@@ -497,6 +497,7 @@ background-image: url('../assets/images/coud-removebg-preview.png');
     box-shadow: none; /* Remove inset shadow */
     transition: transform 0.5s ease, filter 0.5s ease; /* Smooth hover effects */
     padding: 25px 30px 35px;
+    filter: brightness(1.1);
 }
 
 /* Hover Effect */
@@ -2448,8 +2449,8 @@ animation: flipFlop 2s infinite ease-in-out;
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   border: 2px solid #ddd;
   overflow: hidden;
@@ -2468,12 +2469,14 @@ animation: flipFlop 2s infinite ease-in-out;
   margin-left: 90px;
   margin-top: -70px;
   position: absolute;
+ 
 }
 .testimonial-card:hover .text-container .role {
   text-align: left;
   margin-left: 100px;
-  margin-top: -40px;
+  margin-top: -20px;
   position: absolute;
+  font-size: 15px;
 }
 
 .testimonial-card:hover .testimonial-text {
@@ -2554,29 +2557,79 @@ animation: flipFlop 2s infinite ease-in-out;
   gap: 20px; 
   padding: 20px; 
 }
+  .testimonial-card:hover .text-container h3{
+    font-size: 18px;
+    margin-left: 80px;
+    top: 90px;
+  }
+  .testimonial-card:hover .text-container .role {
+  text-align: left;
+  margin-left: 80px;
+  margin-top: -50px;
+  position: absolute;
+  font-size: 15px;
+}
+
 }
 
 @media (max-width: 550px) {
   .testimonial-grid {
   display: grid;
-   grid-template-columns: repeat(1, 1fr);
+   grid-template-columns: repeat(2, 1fr);
   gap: 0px; 
   }
+      .testimonial-grid .testimonial-card {
+        position: relative;
+        width: 100%;
+        height: 345px;
+        background: white;
+        border: 4px solid #000;
+        border-radius: 30px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
   .testimonial-container {
     margin: 40px 0px;
 }
+  .text-container h3 {
+  font-size: 17px;
+  transition: all 0.3s ease;
+  color: #000;
+  text-align: left;
+}
 
-  .text-container .role {
-    font-size: 18px;
-  }
+.text-container .role {
+  font-size: 14px;
+  color: #000;
+  transition: all 0.3s ease;
+  text-align: left;
+  margin-top: 5px;
+}
   .testimonial-card:hover .text-container h3{
-    font-size: 20px;
-    margin-left: 80px;
+    font-size: 15px;
+    margin-left: 45px;
+    top: 80px;
   }
-
+.testimonial-card:hover .text-container .role {
+  text-align: left;
+  margin-left: 50px;
+  margin-top: -50px;
+  position: absolute;
+  font-size: 13px;
+}
   .testimonial-text {
     font-size: 15px;
   }
+  .testimonial-card:hover .image-container {
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  overflow: hidden;
+}
   
 }
 
@@ -2585,14 +2638,36 @@ animation: flipFlop 2s infinite ease-in-out;
   .testimonial-container {
     margin: 40px 0px;
 }
-
+.testimonial-grid {
+  display: grid;
+   grid-template-columns: repeat(1, 1fr);
+  gap: 0px; 
+  }
+   .testimonial-card:hover .image-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  overflow: hidden;
+}
   .text-container .role {
     font-size: 14px;
   }
   .testimonial-card:hover .text-container h3{
-    font-size: 16px;
+    font-size: 18px;
     margin-left: 80px;
+    top: 90px;
   }
+  .testimonial-card:hover .text-container .role {
+  text-align: left;
+  margin-left: 80px;
+  margin-top: -30px;
+  position: absolute;
+  font-size: 15px;
+}
 
   .testimonial-text {
     font-size: 15px;
@@ -2662,14 +2737,14 @@ animation: flipFlop 2s infinite ease-in-out;
 }
 .center-text {
   position: absolute;
-  top: 83%;
-  left: 62%;
+  top: 85%;
+  left:60%;
   transform: translate(-50%, -50%) rotate(-18deg);
   transform-origin: center;
   color: #000;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
-
+ 
   pointer-events: none;
 
 }
@@ -2687,7 +2762,7 @@ animation: flipFlop 2s infinite ease-in-out;
 }
 .center-text-a {
   position: absolute;
-  top: 87%;
+  top: 89%;
     left: 59%;
 
   transform: translate(-100%, -100%) rotate(18deg);
@@ -2703,11 +2778,11 @@ animation: flipFlop 2s infinite ease-in-out;
   .center-text {
   position: absolute;
   top: 75%;
-  left: 90%;
+  left: 80%;
   transform: translate(-50%, -50%) rotate(-18deg);
   transform-origin: center;
   color: #000;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
  width: 100%;
   pointer-events: none;
@@ -2716,12 +2791,12 @@ animation: flipFlop 2s infinite ease-in-out;
   .center-text-a {
   position: absolute;
   top: 92%;
-   left: 115%;
+   left: 105%;
  width: 100%;
   transform: translate(-100%, -100%) rotate(18deg);
   transform-origin: center;
   color: #000;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
 
   pointer-events: none;
@@ -2765,7 +2840,7 @@ animation: flipFlop 2s infinite ease-in-out;
   transform: translate(-50%, -50%) rotate(-18deg);
   transform-origin: center;
   color: #000;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
  width: 100%;
   pointer-events: none;
@@ -2779,7 +2854,7 @@ animation: flipFlop 2s infinite ease-in-out;
   transform: translate(-100%, -100%) rotate(18deg);
   transform-origin: center;
   color: #000;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
 
   pointer-events: none;
@@ -2790,7 +2865,7 @@ animation: flipFlop 2s infinite ease-in-out;
   .center-text {
   position: absolute;
   top: 75%;
-  left: 95%;
+  left: 90%;
   transform: translate(-50%, -50%) rotate(-18deg);
   transform-origin: center;
   color: #000;
@@ -2800,10 +2875,11 @@ animation: flipFlop 2s infinite ease-in-out;
   pointer-events: none;
 
 }
+
   .center-text-a {
   position: absolute;
-  top: 92%;
-   left: 120%;
+  top: 90%;
+   left: 115%;
  width: 100%;
   transform: translate(-100%, -100%) rotate(18deg);
   transform-origin: center;
@@ -2838,7 +2914,7 @@ animation: flipFlop 2s infinite ease-in-out;
 
 .faq-section {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 40px;
   padding: 50px;
 }
@@ -2879,7 +2955,7 @@ animation: flipFlop 2s infinite ease-in-out;
 }
 
 .faq-question {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   margin-top: 10px;
   color: #000;
@@ -2889,28 +2965,33 @@ animation: flipFlop 2s infinite ease-in-out;
 
 .faq-answer {
   position: absolute;
-  bottom: -200px;
+  /* bottom: -200px; */
   left: 0;
   right: 0;
   background-color: var(--primary-color);
   color: #000;
   padding: 10px 15px;
-  font-size: 18px;
+  font-size: 15px;
   border-radius: 10px;
   border-top: 1px dotted #000;
   transition: bottom 0.3s ease-in-out;
   font-family: var(--body-font);
+  display: none;
+  height: 150px;
+  overflow: auto;
 }
 
 .faq-card:hover .faq-answer {
   bottom: 0;
+  display: block;
+   transition: bottom 0.3s ease-in-out;
 }
 
 /* Responsive Design */
 @media (max-width: 1000px){
   .faq-section {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     padding: 10px;
     margin-top: 20px;
@@ -2918,7 +2999,7 @@ animation: flipFlop 2s infinite ease-in-out;
 }
 @media (max-width: 768px) {
   .faq-section {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .faq-card {
@@ -2934,9 +3015,9 @@ animation: flipFlop 2s infinite ease-in-out;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   .faq-section {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
     text-align: center;
     padding: 0;
@@ -2945,13 +3026,14 @@ animation: flipFlop 2s infinite ease-in-out;
 
   .faq-card {
     height: 250px;
-    width: 80%;
-    margin: 0 35px;
+        width: 100%;
+        margin: 0 0px;
 
   }
 
   .faq-question {
     font-size: 14px;
+    height: 100px;
   }
 
   .faq-answer {
@@ -3009,7 +3091,7 @@ animation: flipFlop 2s infinite ease-in-out;
 
 .form-image img {
   max-width: 100%;
-  width: 60%;
+  width: 100%;
   border-radius: 10px;
   border: 3px solid #000;
   padding: 4px;
@@ -3250,7 +3332,27 @@ animation: flipFlop 2s infinite ease-in-out;
     display: flex;
    margin: 5px 5px 0px !important;
     gap: 5px;
+    height: 400px;
+    overflow: auto;
   }
+  .lightbox-main::-webkit-scrollbar {
+  width: 8px; /* Width of vertical scrollbar */
+  height: 8px; /* Height of horizontal scrollbar */
+}
+
+.lightbox-main::-webkit-scrollbar-track {
+  background: #e0e0e0; /* Light gray for the track */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.lightbox-main::-webkit-scrollbar-thumb {
+  background: #888; /* Darker gray for the thumb */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.lightbox-main::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker color when hovered */
+}
    .left-section {
     width: 50%;
     display: flex;
