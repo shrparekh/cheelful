@@ -4,299 +4,152 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cheelful mind Academy </title>
+  <title>Cheerful Mind Academy </title>
   <meta name="description" content="">
-  <title>Cheerful Mind Academy</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
   <script src="https://kit.fontawesome.com/c80ce35b53.js" crossorigin="anonymous"></script>
- <style>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
-  .gallery-frame {
-  cursor: pointer;
-}
+  <style>
+    .gallery-frame {
+      cursor: pointer;
+    }
 
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 3000;
-}
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 3000;
+    }
 
-.popup-content {
-  position: relative;
-  height: 80%;
-  width: 80%;
-  max-width: 100%;
-  background-image: url(assets/images/border.jpeg);
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 8px;
-  padding: 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-size: 300px;
-}
+    .popup-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+      background: none;
+      /* Removed frame image */
+      border-radius: 8px;
+      padding: 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-.popup-frame {
-  display: inline-block ; /* Ensure it takes up full space */
-  width: 100%; /* Match the container width */
-  height: auto;
+    .popup-frame {
+      width: 100%;
+      height: auto;
+      
+    }
 
-}
+    .popup-frame img {
+      position: relative;
+      max-width: 100%;
+      max-height: 100%;
+      height: 500px;
+      width: auto;
+      display: block;
+      margin: auto;
+      border: 4px solid #fff;
+      padding: 30px;
+    }
 
-.popup-frame img {
-  position: absolute; /* Position relative to the frame */
-  top: 48.5%; /* Vertically center */
-  left: 50%; /* Horizontally center */
-  transform: translate(-50%, -50%); /* Perfect centering */
-  transform-origin: center; /* Rotate around the center */
-  max-width: 100%; /* Scale within the frame */
-  max-height: 100%; /* Prevent overflowing the frame */
-}
+    .close-btn-a {
+      position: absolute;
+      top: -50px;
+      right: 0px;
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      color: black;
+      border-radius: 50%;
+      z-index: 1;
+    }
 
- .close-btn-a {
-  position: absolute;
-  top: 10px;
-  right: 0px;
-  font-size: 20px;
-  cursor: pointer;
-  padding: 10px;
-  background-color: green;
-  border-radius: 50%;
-}
+    .popup-controls {
+      position: absolute;
+      top: 50%;
+      
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+   
+    .popup-controls button {
+      margin: 0 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 20px;
+      background-color: rgb(228, 149, 31);
+      color: black;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background 0.3s, color 0.3s;
+      pointer-events: auto;
+      ;
+    }
 
-.popup-controls {
-  position: absolute;
-  top: 50%;
-  width:3%;
-  pointer-events: none; /* so buttons don't block image clicks outside the button area */
-}
+    .popup-controls button:hover {
+      color: brown;
+    }
+  </style>
 
-.popup-controls button {
-       pointer-events: auto;
-    position: absolute;
-    /* left: -4px; */
-    border: none;
-    color: green;
-    font-size: 22px;
-    padding: 3px 5px;
-    cursor: pointer;
-    border-radius: 50%;
-    user-select: none;
-    transform: translateY(-53%);
-    transition: background 0.3s;
-}
-.popup-controls button:hover {
- color: brown;
-}
-
-.prev-btn-a {
-  right: 240px !important;
-}
-
-.next-btn-a {
-  left: 240px !important;
-}
- @media screen and (max-width: 800px){
-  .popup-controls {
-  position: absolute;
-  top: 50%;
-  width:5%;
-  pointer-events: none; /* so buttons don't block image clicks outside the button area */
-}
-.popup-controls button {
-       pointer-events: auto;
-    position: absolute;
-    /* left: -4px; */
-    border: none;
-    color: green;
-    font-size: 18px;
-    padding: 3px 5px;
-    cursor: pointer;
-    border-radius: 50%;
-    user-select: none;
-    transform: translateY(-53%);
-    transition: background 0.3s;
-}
-.popup-content {
-  position: relative;
-  height: 90%;
-  width: 80%;
-  max-width:100%;
-  background-image: url(assets/images/border.jpeg);
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 8px;
- background-size: 350px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
- }
-
-
-
-
-
- @media screen and (max-width: 500px){
-  .popup-controls {
-  position: absolute;
-  top: 50%;
-  width:8%;
-  pointer-events: none; /* so buttons don't block image clicks outside the button area */
-}
-.popup-controls button {
-       pointer-events: auto;
-    position: absolute;
-    /* left: -4px; */
-    border: none;
-    color: green;
-    font-size: 18px;
-    padding: 3px 5px;
-    cursor: pointer;
-    border-radius: 50%;
-    user-select: none;
-    transform: translateY(-53%);
-    transition: background 0.3s;
-}
- .prev-btn-a {
-  right: 175px !important;
-}
-
-.next-btn-a {
-  left: 175px !important;
-}
-.popup-content {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  max-width:100%;
-  background-image: url(assets/images/border.jpeg);
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 8px;
- background-size: 280px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
- }
-
- @media screen and (max-width: 420px){
-  .popup-content {
-  position: relative;
-  height: 100%;
-  width: 80%;
-  max-width:100%;
-  background-image: url(assets/images/border.jpeg);
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 8px;
-  background-size: 250px;
- 
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.popup-frame {
-  position: relative;
-  height: 70%;
-  width: 70%;
-  overflow: hidden;
-
-}
- }
-  .prev-btn-a {
-  right: 160px;
-}
-
-.next-btn-a {
-  left: 160px;
-}
- @media screen and (max-width: 360px){
-   .popup-content {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  max-width:100%;
-  background-image: url(assets/images/border.jpeg);
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 8px;
-  background-size: 250px;
- 
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.popup-frame {
-  position: relative;
-  height: 65%;
-  width: 65%;
-  overflow: hidden;
-
-}
-.prev-btn-a {
-  right: 140px !important;
-}
-
-.next-btn-a {
-  left: 140px !important;
-}
- }
- 
-
- </style>
- 
 </head>
 
 <body>
 
-<div id="preloader">
-  <div class="loader">
-    <img src="assets/images/logo.png" alt="Loading..." />
-    <p>
-      Loading Your Child's Future
-      <span class="dots">
-        <span class="dot" style="background-color: #e74c3c;"></span>
-        <span class="dot" style="background-color: #3498db;"></span>
-        <span class="dot" style="background-color: #2ecc71;"></span>
-        <span class="dot" style="background-color: #f1c40f;"></span>
-        <span class="dot" style="background-color: #9b59b6;"></span>
-      </span>
-    </p>
+  <div id="preloader">
+    <div class="loader">
+      <img src="assets/images/logo.png" alt="Loading..." />
+      <p>
+        Loading Your Child's Future
+        <span class="dots">
+          <span class="dot" style="background-color: #e74c3c;"></span>
+          <span class="dot" style="background-color: #3498db;"></span>
+          <span class="dot" style="background-color: #2ecc71;"></span>
+          <span class="dot" style="background-color: #f1c40f;"></span>
+          <span class="dot" style="background-color: #9b59b6;"></span>
+        </span>
+      </p>
+    </div>
   </div>
-</div>
 
 
 
 
 
   <!-- Navbar section start -->
-  <nav class="navbar navbar-light  px-3 py-2">
+  <nav class="navbar navbar-light">
     <div class="container-fluid">
       <a class="navbar-brand d-flex align-items-center text-danger fw-bold" href="#">
-        <img src="assets/images/logo.png" alt="Logo" />
-        <Span> CMA</Span>
+        
+          <img src="assets/images/logo.png" alt="Logo" />
+          <div class="left1">
+            
+            <Span> CMA</Span>
+            <p>Preschool / Daycare / Activitiy Center </p>
+          </div>
+
+         
+        
+
       </a>
       <!-- Toggle Button -->
       <button class="btn btn-outline-danger d-lg-none" type="button" data-bs-toggle="offcanvas"
@@ -342,12 +195,12 @@
     <h1 class="main-title text-danger">CHEERFUL MIND <br> ACADEMY</h1>
     <div class="cloud">
       <p class="description  ">
-      WELCOME TO CHEERFUL MIND ACADEMY <br>
-      A BEACON OF EARLY CHILDHOOD EDUCATION EXCELLENCE <br>
-      WITH A LEGACY FOR OVER 25 YEARS AND 10,000 YOUNG MINDS.
-    </p>
+        WELCOME TO CHEERFUL MIND ACADEMY <br>
+        A BEACON OF EARLY CHILDHOOD EDUCATION EXCELLENCE <br>
+        WITH A LEGACY FOR OVER 25 YEARS AND 10,000 YOUNG MINDS.
+      </p>
     </div>
-    
+
     <button class="btn btn-warning arrow-btn-hero mt-3" id="scrollBtn">
       <span style="font-size: 24px;">⬇</span>
     </button>
@@ -361,14 +214,9 @@
         </div>
       </div>
       <div class="hero-img rotate-2">
-        
-          <img src="assets/images/hero/h2.png" class="">
-        
-      </div>
-      <div class="polaroid-wrapper rotate-3">
-        <div class="polaroid">
-          <img src="assets/images/hero/h3.png" class="image">
-        </div>
+
+        <img src="assets/images/hero/h2.png" class="">
+
       </div>
       <div class="polaroid-wrapper rotate-4">
         <div class="polaroid">
@@ -376,9 +224,9 @@
         </div>
       </div>
       <div class="hero-img-1 ">
-        
-          <img src="assets/images/hero/h5.png" class=" ">
-        
+
+        <img src="assets/images/hero/h5.png" class=" ">
+
       </div>
       <div class="polaroid-wrapper rotate-6">
         <div class="polaroid">
@@ -395,6 +243,12 @@
           <img src="assets/images/hero/6.png" class="image">
         </div>
       </div>
+            <div class="polaroid-wrapper rotate-3">
+        <div class="polaroid">
+          <img src="assets/images/hero/h3.png" class="image">
+        </div>
+      </div>
+
       <!-- <img src="assets/images/kid1.jpeg" class="polaroid rotate-2">
           <img src="assets/images/kid1.jpeg" class="polaroid rotate-3">
           <img src="assets/images/kid1.jpeg" class="polaroid rotate-4">
@@ -430,44 +284,52 @@
           <div class="card">
             <img src="assets/images/icons/i1.png" />
             <h3>INQUIRY-BASED <br> LEARNING</h3>
-            <p>Our curriculum is built around inquiry, encouraging children to ask questions, investigate, and make discoveries through hands-on experiences.
+            <p>Our curriculum is built around inquiry, encouraging children to ask questions, investigate, and make
+              discoveries through hands-on experiences.
             </p>
           </div>
           <div class="card">
             <img src="assets/images/icons/i-2.svg" />
             <h3>PLAY-BASED <br> APPROACH</h3>
-            <p>We believe in the power of play as a natural and effective way for children to learn, develop social skills, and express their creativity.
+            <p>We believe in the power of play as a natural and effective way for children to learn, develop social
+              skills, and express their creativity.
             </p>
           </div>
           <div class="card">
             <img src="assets/images/icons/i-3.png" />
             <h3>CULTURAL <br> DIVERSITY</h3>
-            <p>We celebrate diversity and promote cultural understanding, preparing children to be global citizens with respect for different perspectives and backgrounds.</p>
+            <p>We celebrate diversity and promote cultural understanding, preparing children to be global citizens with
+              respect for different perspectives and backgrounds.</p>
           </div>
           <div class="card">
             <img src="assets/images/icons/i-4.png" />
             <h3>1:5 STUDENT <br> TEACHER RATIO</h3>
-            <p>Our small class sizes ensure personalised attention, meaningful interactions, and individualised support for every child's learning journey.</p>
+            <p>Our small class sizes ensure personalised attention, meaningful interactions, and individualised support
+              for every child's learning journey.</p>
           </div>
           <div class="card">
             <img src="assets/images/icons/i-5.png" />
             <h3>ECOLOGICAL <br> LEARNING</h3>
-            <p>We instill a sense of environmental responsibility through nature-based learning experiences, gardening activities, and lessons on conservation, nurturing a deep connection with the natural world.</p>
+            <p>We instill a sense of environmental responsibility through nature-based learning experiences, gardening
+              activities, and lessons on conservation, nurturing a deep connection with the natural world.</p>
           </div>
           <div class="card">
             <img src="assets/images/icons/i-6.png" />
             <h3>HOLISTIC <br> EDUCATION</h3>
-            <p>We nurture the physical, emotional, social, and cognitive development of each child, providing a well-rounded education that prepares them for future challenges and opportunities.</p>
+            <p>We nurture the physical, emotional, social, and cognitive development of each child, providing a
+              well-rounded education that prepares them for future challenges and opportunities.</p>
           </div>
           <div class="card">
             <img src="assets/images/icons/i-7.png" />
             <h3>SOCIAL-EMOTIONAL <br> LEARNING</h3>
-            <p>Our curriculum emphasises social-emotional skills such as empathy, cooperation, resilience, fostering positive relationships, emotional well-being, and effective communication among students.</p>
+            <p>Our curriculum emphasises social-emotional skills such as empathy, cooperation, resilience, fostering
+              positive relationships, emotional well-being, and effective communication among students.</p>
           </div>
           <div class="card">
             <img src="assets/images/icons/i-8.png" />
             <h3>PARENT <br> PARTNERSHIP</h3>
-            <p>We believe fostering partnerships with parents, involving child's learning. Through collaboration, shared decision-making, create supportive community.</p>
+            <p>We believe fostering partnerships with parents, involving child's learning. Through collaboration, shared
+              decision-making, create supportive community.</p>
           </div>
         </div>
       </div>
@@ -529,62 +391,62 @@
   </div>
 
   <!-- Section Content -->
-  <section class="program-section" >
+  <section class="program-section">
     <div id="program">
       <div class="welcome-btn">OUR PROGRAMS</div>
 
 
 
-    <div class="grid-boxes-2col">
-      <div class="box" data-index="0">
-        <img src="assets/images/img/playground.png" alt="Playgroup">
-        <p>PLAYGROUP</p>
+      <div class="grid-boxes-2col">
+        <div class="box" data-index="0">
+          <img src="assets/images/img/playground.png" alt="Playgroup">
+          <p>PLAYGROUP</p>
+        </div>
+        <div class="box" data-index="1">
+          <img src="assets/images/img/pre-nursery.png" alt="Pre-Nursery">
+          <p>PRE-NURSERY</p>
+        </div>
+        <div class="box" data-index="2">
+          <img src="assets/images/img/nursery.png" alt="Nursery">
+          <p>NURSERY</p>
+        </div>
+        <div class="box" data-index="3">
+          <img src="assets/images/img/KINDERGARTEN.png" alt="Kindergarten">
+          <p>KINDERGARTEN</p>
+        </div>
       </div>
-      <div class="box" data-index="1">
-        <img src="assets/images/img/pre-nursery.png" alt="Pre-Nursery">
-        <p>PRE-NURSERY</p>
-      </div>
-      <div class="box" data-index="2">
-        <img src="assets/images/img/nursery.png" alt="Nursery">
-        <p>NURSERY</p>
-      </div>
-      <div class="box" data-index="3">
-        <img src="assets/images/img/KINDERGARTEN.png" alt="Kindergarten">
-        <p>KINDERGARTEN</p>
-      </div>
-    </div>
     </div>
 
 
     <div id="after">
-      <div class="welcome-btn-1" >AFTER SCHOOL PROGRAMS</div>
-    <div class="grid-boxes-responsive" >
-      <div class="box" data-index="4">
-        <img src="assets/images/img/DAYCARE.png" alt="Daycare">
-        <p>DAYCARE</p>
+      <div class="welcome-btn-1">AFTER SCHOOL PROGRAMS</div>
+      <div class="grid-boxes-responsive">
+        <div class="box" data-index="4">
+          <img src="assets/images/img/DAYCARE.png" alt="Daycare">
+          <p>DAYCARE</p>
+        </div>
+        <div class="box" data-index="5">
+          <img src="assets/images/img/PHONICS.png" alt="Phonics">
+          <p>PHONICS CLASSES FOR CHILDREN</p>
+        </div>
+        <div class="box" data-index="6">
+          <img src="assets/images/img/CREATIVE.png" alt="Grammar">
+          <p>GRAMMAR AND CREATIVE WRITING</p>
+        </div>
       </div>
-      <div class="box" data-index="5">
-        <img src="assets/images/img/PHONICS.png" alt="Phonics">
-        <p>PHONICS CLASSES FOR CHILDREN</p>
-      </div>
-      <div class="box" data-index="6">
-        <img src="assets/images/img/CREATIVE.png" alt="Grammar">
-        <p>GRAMMAR AND CREATIVE WRITING</p>
-      </div>
-    </div>
 
-    <div class="grid-boxes-responsive-bottom">
-      <div class="box" data-index="7">
-        <img src="assets/images/img/DRAMA.png" alt="Trinity">
-        <p>TRINITY SPEECH AND DRAMA CLASS</p>
-      </div>
-      <div class="box" data-index="8">
-        <img src="assets/images/img/MIDBRAIN.png" alt="Midbrain">
-        <p>MIDBRAIN ACTIVATION PROGRAM</p>
+      <div class="grid-boxes-responsive-bottom">
+        <div class="box" data-index="7">
+          <img src="assets/images/img/DRAMA.png" alt="Trinity">
+          <p>TRINITY SPEECH AND DRAMA CLASS</p>
+        </div>
+        <div class="box" data-index="8">
+          <img src="assets/images/img/MIDBRAIN.png" alt="Midbrain">
+          <p>MIDBRAIN ACTIVATION PROGRAM</p>
+        </div>
       </div>
     </div>
-    </div>
-     <!-- <div class="row  d-flex justify-content-around">
+    <!-- <div class="row  d-flex justify-content-around">
       <div class="col-6 gif-container text-center">
         <img src="assets/images/git1.gif" alt="CMA Animation" class="gif-img">
       </div>
@@ -611,7 +473,7 @@
       </div>
     </div>
     <div class="container">
-      <div class="row testimonial-grid">
+      <div class="row testimonial-grid slider">
         <div class="">
           <div class="testimonial-container">
             <div class="testimonial-card">
@@ -709,7 +571,7 @@
       </div>
     </div>
     <div class="container">
-     <div class="row d-flex justify-content-between">
+      <div class="row d-flex justify-content-between">
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="gallery-frame" onclick="openPopup(1)">
             <img src="assets/images/right-1.png" class="frame-image" alt="Frame">
@@ -723,7 +585,7 @@
             <img src="assets/images/gallery/sport-nursary.png" class="center-image-a" alt="Kid Image">
             <div class="center-text-a">Sports Day (Nursery)</div>
           </div>
-          
+
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="gallery-frame" onclick="openPopup(3)">
@@ -731,7 +593,7 @@
             <img src="assets/images/gallery/sport-prenursary.png" class="center-image" alt="Kid Image">
             <div class="center-text">Sports Day (Pre-Nursery)</div>
           </div>
-        
+
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="gallery-frame" onclick="openPopup(4)">
@@ -746,7 +608,7 @@
             <img src="assets/images/gallery/firestation-nursary.png" class="center-image-a" alt="Kid Image">
             <div class="center-text-a">Firestation (Nursery)</div>
           </div>
-          
+
         </div>
 
         <div class="col-lg-3 col-md-4 col-sm-6">
@@ -755,7 +617,7 @@
             <img src="assets/images/gallery/firestationpre-nursary.png" class="center-image" alt="Kid Image">
             <div class="center-text">Firestation (Pre-Nursery)</div>
           </div>
-        
+
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="gallery-frame" onclick="openPopup(7)">
@@ -784,7 +646,7 @@
             <img src="assets/images/gallery/Garware Clud-nursary.png" class="center-image-a" alt="Kid Image">
             <div class="center-text-a">Garware Clud (Nursery)</div>
           </div>
-          
+
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="gallery-frame" onclick="openPopup(11)">
@@ -792,37 +654,37 @@
             <img src="assets/images/gallery/GarwareClud-pre-nursary.png" class="center-image" alt="Kid Image">
             <div class="center-text">Garware Clud (Pre-Nursery)</div>
           </div>
-        
+
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="gallery-frame" onclick="openPopup(12)">
             <img src="assets/images/left-2.png" class="frame-image" alt="Frame">
             <img src="assets/images/gallery/bollywood.png" class="center-image-a" alt="Kid Image">
-            <div class="center-text-a">Bollywood </div>
+            <div class="center-text-a">Bollywood 2024</div>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="gallery-frame" onclick="openPopup(13)">
             <img src="assets/images/left-1.png" class="frame-image" alt="Frame">
             <img src="assets/images/gallery/diwali.png" class="center-image-a" alt="Kid Image">
-            <div class="center-text-a">Diwali</div>
+            <div class="center-text-a">Diwali 2024</div>
           </div>
-          
+
         </div>
 
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="gallery-frame" onclick="openPopup(14)">
             <img src="assets/images/right-2.png" class="frame-image" alt="Frame">
             <img src="assets/images/gallery/visarjan.png" class="center-image" alt="Kid Image">
-            <div class="center-text">Visarjan</div>
+            <div class="center-text">Ganpati Visarjan </div>
           </div>
-        
+
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="gallery-frame" onclick="openPopup(15)">
             <img src="assets/images/left-2.png" class="frame-image" alt="Frame">
             <img src="assets/images/gallery/playground.png" class="center-image-a" alt="Kid Image">
-            <div class="center-text-a">Playground</div>
+            <div class="center-text-a">Playground 2024</div>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6">
@@ -833,22 +695,22 @@
           </div>
         </div>
       </div>
-  </div>
-
-  <!-- Popup for Sub Images -->
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <span class="close-btn-a" onclick="closePopup()">&times;</span>
-      <div class="popup-frame">
-        <img id="popup-frame-image" src="" alt="Sub Image">
-      </div>
-      <div class="popup-controls">
-  <button class="prev-btn-a" onclick="prevImage()" aria-label="Previous">&#9664;</button>
-  <button class="next-btn-a" onclick="nextImage()" aria-label="Next">&#9654;</button>
-</div>
-
     </div>
-  </div>
+
+    <!-- Popup for Sub Images -->
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn-a" onclick="closePopup()">&times;</span>
+        <div class="popup-frame">
+          <img id="popup-frame-image" src="" alt="Sub Image">
+        </div>
+        <div class="popup-controls">
+          <button class="prev-btn-a" onclick="prevImage()" aria-label="Previous">&#9664;</button>
+          <button class="next-btn-a" onclick="nextImage()" aria-label="Next">&#9654;</button>
+        </div>
+
+      </div>
+    </div>
   </section>
   <!-- Gallery section end -->
 
@@ -867,7 +729,8 @@
             <span>FAQ</span>
           </div>
           <div class="faq-question">Can I walk in to visit the school for admission?</div>
-          <div class="faq-answer">We request parents to call and inquire before visiting. This helps us ensure a staff member is available to assist you personally.</div>
+          <div class="faq-answer">We request parents to call and inquire before visiting. This helps us ensure a staff
+            member is available to assist you personally.</div>
         </div>
         <div class="faq-card">
           <div class="faq-header">
@@ -875,8 +738,9 @@
             <span>FAQ</span>
           </div>
           <div class="faq-question">Do you offer school visits or trial classes before admission?</div>
-          <div class="faq-answer">Yes, school visits are available from Monday to Friday between 2:00 PM and 4:00 PM (non-school hours). However, we do not offer free trial classes.
-</div>
+          <div class="faq-answer">Yes, school visits are available from Monday to Friday between 2:00 PM and 4:00 PM
+            (non-school hours). However, we do not offer free trial classes.
+          </div>
         </div>
         <div class="faq-card">
           <div class="faq-header">
@@ -884,7 +748,8 @@
             <span>FAQ</span>
           </div>
           <div class="faq-question">When are admissions open?</div>
-          <div class="faq-answer">Admissions are open throughout the year, subject to seat availability. We recommend early inquiry for preferred batches.</div>
+          <div class="faq-answer">Admissions are open throughout the year, subject to seat availability. We recommend
+            early inquiry for preferred batches.</div>
         </div>
         <div class="faq-card">
           <div class="faq-header">
@@ -892,7 +757,8 @@
             <span>FAQ</span>
           </div>
           <div class="faq-question">What are the school timings?</div>
-          <div class="faq-answer">The school operates from 9:00 AM to 7:00 PM. Timings vary depending on the child’s class and batch and will be shared during admission.</div>
+          <div class="faq-answer">The school operates from 9:00 AM to 7:00 PM. Timings vary depending on the child’s
+            class and batch and will be shared during admission.</div>
         </div>
         <div class="faq-card">
           <div class="faq-header">
@@ -916,15 +782,19 @@
             <span>FAQ</span>
           </div>
           <div class="faq-question">What curriculum do you follow?</div>
-          <div class="faq-answer">We follow a thoughtfully blended curriculum combining play-way and Montessori methods. Our programs are designed to foster creativity, independence, and a smooth transition into formal schooling.</div>
+          <div class="faq-answer">We follow a thoughtfully blended curriculum combining play-way and Montessori methods.
+            Our programs are designed to foster creativity, independence, and a smooth transition into formal schooling.
+          </div>
         </div>
-         <div class="faq-card">
+        <div class="faq-card">
           <div class="faq-header">
             <i class="fa-solid fa-circle-info"></i>
             <span>FAQ</span>
           </div>
           <div class="faq-question">How do you ensure children are school-ready by Kindergarten?</div>
-          <div class="faq-answer">We focus on developing a strong foundation through phonics, early numeracy, social skills, and hands-on exploration. Our curriculum gradually introduces routines, structured learning, and self-management—all of which prepare children confidently for primary school environments.</div>
+          <div class="faq-answer">We focus on developing a strong foundation through phonics, early numeracy, social
+            skills, and hands-on exploration. Our curriculum gradually introduces routines, structured learning, and
+            self-management—all of which prepare children confidently for primary school environments.</div>
         </div>
         <div class="faq-card">
           <div class="faq-header">
@@ -932,7 +802,8 @@
             <span>FAQ</span>
           </div>
           <div class="faq-question">What is the teacher-to-child ratio?</div>
-          <div class="faq-answer">Our teacher-to-child ratio is 1:6, ensuring personalized attention and care for every child.</div>
+          <div class="faq-answer">Our teacher-to-child ratio is 1:6, ensuring personalized attention and care for every
+            child.</div>
         </div>
         <div class="faq-card">
           <div class="faq-header">
@@ -940,7 +811,8 @@
             <span>FAQ</span>
           </div>
           <div class="faq-question">Are your staff trained in early childhood care and safety?</div>
-          <div class="faq-answer">Yes, all our teachers are trained in early childhood education and first aid protocols.</div>
+          <div class="faq-answer">Yes, all our teachers are trained in early childhood education and first aid
+            protocols.</div>
         </div>
         <div class="faq-card">
           <div class="faq-header">
@@ -948,7 +820,8 @@
             <span>FAQ</span>
           </div>
           <div class="faq-question">Do you provide snacks or meals?</div>
-          <div class="faq-answer">Children bring their own food from home. We provide a recommended snack list to ensure consistency and nutritional balance.</div>
+          <div class="faq-answer">Children bring their own food from home. We provide a recommended snack list to ensure
+            consistency and nutritional balance.</div>
         </div>
         <div class="faq-card">
           <div class="faq-header">
@@ -956,7 +829,8 @@
             <span>FAQ</span>
           </div>
           <div class="faq-question">Do you offer transport facilities?</div>
-          <div class="faq-answer"> No, we currently do not offer transport facilities. Parents are requested to make their own pick-up and drop arrangements.</div>
+          <div class="faq-answer"> No, we currently do not offer transport facilities. Parents are requested to make
+            their own pick-up and drop arrangements.</div>
         </div>
         <div class="faq-card">
           <div class="faq-header">
@@ -964,7 +838,8 @@
             <span>FAQ</span>
           </div>
           <div class="faq-question">Do you offer daycare or after-school care?</div>
-          <div class="faq-answer"> Yes, we offer extended daycare hours and engaging after-school programs for children who stay beyond regular school time.</div>
+          <div class="faq-answer"> Yes, we offer extended daycare hours and engaging after-school programs for children
+            who stay beyond regular school time.</div>
         </div>
       </div>
 
@@ -976,40 +851,108 @@
 
 
   <!-- Contact Form start -->
-  <section class="form-container">
+  <section class="form-container" id="contact">
     <div class="container ">
       <div class="row">
         <div class="col-md-7">
           <div class="form-header">
             <h1>CMA CONNECT</h1>
-            <p>Sint do consectetur quis consequat consectetur elit amet. Lorem pariatur culpa aute eiusmod sunt ex ad.
+            <p>At CMA Play School, we are always excited to hear from parents, guardians, and well-wishers. Whether you
+              have questions about admissions, our curriculum, or any other inquiry, we’re here to help!
             </p>
           </div>
           <div class="form-body">
-            <form>
+            <form id="request_qoute_form">
               <div class="row mb-3">
+
+
+
+
+                <input type="hidden" class="form-control" name="schoolId" value="Rdsp34oyTh">
+
+
                 <div class="col-md-6">
-                  <input type="text" class="form-control" placeholder="First Name*" required>
+
+
+                  <input type="text" class="form-control" placeholder="Enter Child's Name" name="childName" required>
                 </div>
                 <div class="col-md-6">
-                  <input type="text" class="form-control" placeholder="Last Name*" required>
+
+
+                  <input type="date" class="form-control" placeholder="Enter Date Of Birth" name="dob" required>
                 </div>
+                <div class="col-md-6">
+
+
+                  <input type="email" class="form-control" placeholder="Email Address" name="email" required>
+                </div>
+                <div class="col-md-6">
+
+
+                  <input type="text" class="form-control" placeholder="Enter Parent Name" name="parentName" required>
+                </div>
+                <div class="col-md-6">
+
+
+                  <input type="tel" class="form-control" placeholder="Enetr Phone Number" name="phone" required>
+                </div>
+                <div class="col-md-6 ">
+
+
+                  <select class="form-control mt-2" id="relation" name="relation" required>
+                    <option value="" disabled selected>Select Relation</option>
+                    <option value="mother">Mother</option>
+                    <option value="father">Father</option>
+                  </select>
+                </div>
+                <div class="col-md-12">
+
+
+                  <select class="form-control mt-2" id="source" name="enquirySource" required>
+                    <option value="" disabled selected>Program You Are Enquiring For</option>
+                    <option value="kindergarden">Kindergarden</option>
+                    <option value="nursary">Nursary</option>
+                    <option value="playground">Playground</option>
+                    <option value="pre-nursary">Pre Nursary</option>
+                    <option value="day-care">Day care</option>
+                  </select>
+                </div>
+                <div class="col-md-6 ">
+
+
+                  <select class="form-control mt-2" id="enqury" name="enquiryFor" required>
+                    <option value="" disabled selected>Enquiry For</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+               
+                <div class="col-md-6">
+
+
+                  <input type="text" class="form-control" placeholder="Admission For Year" name="academicYear" required>
+                </div>
+               
+                <!-- <div class="col-md-12">
+
+
+                  <textarea name="note" id="" class="form-control" placeholder="notes"></textarea>
+
+
+                </div> -->
               </div>
-              <div class="mb-3">
-                <input type="email" class="form-control" placeholder="Email Address*" required>
-              </div>
-              <div class="mb-3">
-                <input type="tel" class="form-control" placeholder="Phone Number*" required>
-              </div>
-              <button type="submit" class="btn btn-submit w-100">SUBMIT</button>
+
+
+              <button type="submit" class="btn btn-submit mt-2 w-100">SUBMIT</button>
             </form>
+
           </div>
         </div>
         <div class="col-md-5 form-image">
           <img src="assets/images/gallery/All.JPG" alt="Playground">
         </div>
       </div>
-      
+
     </div>
   </section>
   <!-- Contact Form End -->
@@ -1022,20 +965,24 @@
         <div class="col-lg-6 col-sm-12 logo-section">
           <img src="assets/images/logo.png" alt="">
           <h4>CHEERFUL MIND ACADEMY</h4>
-          <p>4 & 5, Vidhyut-C & D, Ground Floor, JSS Road, Opp. St.Xavier Street, Thakurdwar, Mumbai-400002.</p>
-          <p class="no"><a href="">9987450006</a>, <a href="">9987450002</a></p>
+          <p>Cheerful Mind Academy, Shop No.8, 380/82, J S S Road, Nana Sunkersett Smriti, Chira Bazar, Mumbai,
+            Maharashtra 400002</p>
+          <p class="no"><a href="tel:+91 7777045387">7777045387</a>, <a href="tel:+91 9987450006">9987450006</a></p>
         </div>
         <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-around icon-section">
-          <div><a href=""><i class="fa-solid fa-phone-flip"></i></a></div>
-          <div><a href=""><i class="fa-solid fa-envelope"></i></a></div>
-          <div><a href=""><i class="fa-brands fa-instagram"></i></a></div>
-          <div><a href=""><i class="fa-brands fa-square-facebook"></i></a></div>
+          <div><a href="tel:+91 7777045387"><i class="fa-solid fa-phone-flip"></i></a></div>
+          <div><a href="mailto:Cmaplayschool@gmail.com"><i class="fa-solid fa-envelope"></i></a></div>
+          <div><a href="https://www.instagram.com/cmaplayschool?igsh=MXI4emExa2FoZTIzZA=="><i
+                class="fa-brands fa-instagram"></i></a></div>
+          <div><a href="https://www.facebook.com/share/1AdviRGiew/?mibextid=wwXIfr"><i
+                class="fa-brands fa-square-facebook"></i></a></div>
         </div>
       </div>
       <div class="row m text-center footer-bottom">
         <div class="col-12 d-flex justify-content-between">
           <div>
-            <p class="mb-0">Copyright&copy; 2024 Cheerful Mind Academy All Rights Reserved.</p>
+            <p class="mb-0">Copyright&copy; 2024 Cheerful Mind Academy All Rights Reserved. || Powered By <a
+                href="https://sparkmindscoders.com/">sparkmindscoders</a></p>
           </div>
           <div>
             <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
@@ -1048,7 +995,7 @@
 
 
   <!-- modal form -->
-   <div id="lightbox" class="lightbox">
+  <div id="lightbox" class="lightbox">
     <div class="lightbox-content">
       <button class="close-btn">×</button>
       <div class="lightbox-main">
@@ -1075,33 +1022,164 @@
   </div>
   <!-- modal form end -->
 
-<!-- Scroll to Top Button -->
-<button id="scrollToTopBtn" class="scroll-to-top">
-  ↑
-</button>
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" class="scroll-to-top">
+    ↑
+  </button>
 
-  
+<a href="#contact" class="enroll-now-btn">Enroll Now</a>
+
 
   <!-- js links -->
-     <script src="assets/js/gallary.js"></script>
-    <script src="assets/js/service.js"></script>
-   
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
- 
-  
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gallary.js"></script>
+  <script src="assets/js/service.js"></script>
 
-<script>
-  // Wait for 5 seconds then hide the preloader
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      const preloader = document.getElementById("preloader");
-      preloader.style.opacity = '0';
-      preloader.style.transition = 'opacity 0.5s ease';
-      setTimeout(() => preloader.style.display = 'none', 500); // Fully remove after fade
-    }, 2000); // 5000ms = 5 seconds
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <script src="assets/js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+  <script>
+    // Wait for 5 seconds then hide the preloader
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        const preloader = document.getElementById("preloader");
+        preloader.style.opacity = '0';
+        preloader.style.transition = 'opacity 0.5s ease';
+        setTimeout(() => preloader.style.display = 'none', 200); // Fully remove after fade
+      }, 1000); // 5000ms = 5 seconds
+    });
+  </script>
+
+  <script>
+    $("#request_qoute_form").validate({
+      rules: {
+        childName: { required: true },
+        dob:{required: true},
+        parentName: { required: true },
+        relation: { required: true },
+        enquirySource: { required: true },
+        enquiryFor: { required: true },
+        academicYear: { required: true },
+        email: { required: true, email: true },
+        phone: { required: true, minlength: 10, maxlength: 10, digits: true },
+       
+       
+      },
+      messages: {
+        childName: { required: "Please enter your childname" },
+        parentName: { required: "Please enter your parentname" },
+        relation: { required: "Please select  relation" },
+        dob:{ required: "Please enter  date of birth" },
+        enquirySource:{ required: "Please select program you are enquiring for " },
+        enquiryFor : { required: "Please select  enquiry for" },
+        academicYear :{required:"Please enter academic year"},
+        email: {
+          required: "Please enter your email address",
+          email: "Please enter a valid email address",
+        },
+        phone: {
+          required: "Please enter your phone number",
+          minlength: "Phone number must be exactly 10 digits",
+          maxlength: "Phone number must be exactly 10 digits",
+          digits: "Please enter a valid phone number with only digits",
+        }
+       
+
+
+      },
+      submitHandler: function (form, event) {
+        // Prevent the form's default submit action (page reload)
+        event.preventDefault();
+
+
+        // Show SweetAlert loader before the AJAX call starts
+        Swal.fire({
+          title: 'Submitting your request...',
+          text: 'Please wait a moment',
+          allowOutsideClick: false,
+          didOpen: () => {
+            Swal.showLoading(); // Show Swal loader
+          },
+        });
+
+
+        
+        // Create FormData object
+        var formData = new FormData($(form)[0]);
+        $.ajax({
+          type: "POST",
+          url: "https://liltriangle.back4app.io/addEnquiry",
+          data: $(form).serialize(),
+
+
+          success: function (message) {
+            // Close the loader when the request completes
+            Swal.close();
+
+
+            console.log(message);
+            if (message.success === true) {
+              Swal.fire("Successful!", "Your message has been sent!", "success");
+              $(form).trigger("reset");
+            } else {
+              Swal.fire("Error", "There was an issue sending your message.", "error");
+            }
+          },
+          error: function (t) {
+            // Close the loader if an error occurs
+            Swal.close();
+            Swal.fire("Error", "Error submitting form: " + t.statusText, "error");
+          },
+        });
+      },
+    });
+  </script>
+  <script>
+$(document).ready(function(){
+  function initSlider() {
+    if ($(window).width() < 800) {
+      if (!$('.slider').hasClass('slick-initialized')) {
+        $('.slider').slick({
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: true,
+          arrows: false,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          infinite: true,
+          responsive: [
+            {
+              breakpoint: 500,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+          ]
+        });
+      }
+    } else {
+      if ($('.slider').hasClass('slick-initialized')) {
+        $('.slider').slick('unslick'); // destroy on large screens
+      }
+    }
+  }
+
+  initSlider();
+
+  $(window).on('resize', function(){
+    initSlider();
   });
+});
 </script>
+
+
+
 
 
 

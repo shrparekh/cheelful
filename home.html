@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheerful Mind Academy </title>
+  <meta name="description" content="">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="https://kit.fontawesome.com/c80ce35b53.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+  <style>
+    .gallery-frame {
+      cursor: pointer;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 3000;
+    }
+
+    .popup-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+      background: none;
+      /* Removed frame image */
+      border-radius: 8px;
+      padding: 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-frame {
+      width: 100%;
+      height: auto;
+      
+    }
+
+    .popup-frame img {
+      position: relative;
+      max-width: 100%;
+      max-height: 100%;
+      height: 500px;
+      width: auto;
+      display: block;
+      margin: auto;
+      border: 4px solid #fff;
+      padding: 30px;
+    }
+
+    .close-btn-a {
+      position: absolute;
+      top: -50px;
+      right: 0px;
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      color: black;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .popup-controls {
+      position: absolute;
+      top: 50%;
+      
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+   
+    .popup-controls button {
+      margin: 0 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 20px;
+      background-color: rgb(228, 149, 31);
+      color: black;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background 0.3s, color 0.3s;
+      pointer-events: auto;
+      ;
+    }
+
+    .popup-controls button:hover {
+      color: brown;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="preloader">
+    <div class="loader">
+      <img src="assets/images/logo.png" alt="Loading..." />
+      <p>
+        Loading Your Child's Future
+        <span class="dots">
+          <span class="dot" style="background-color: #e74c3c;"></span>
+          <span class="dot" style="background-color: #3498db;"></span>
+          <span class="dot" style="background-color: #2ecc71;"></span>
+          <span class="dot" style="background-color: #f1c40f;"></span>
+          <span class="dot" style="background-color: #9b59b6;"></span>
+        </span>
+      </p>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- Navbar section start -->
+  <nav class="navbar navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center text-danger fw-bold" href="#">
+        
+          <img src="assets/images/logo.png" alt="Logo" />
+          <div class="left1">
+            
+            <Span> CMA</Span>
+            <p>Preschool / Daycare / Activitiy Center </p>
+          </div>
+
+         
+        
+
+      </a>
+      <!-- Toggle Button -->
+      <button class="btn btn-outline-danger d-lg-none" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#mobileNav" aria-controls="mobileNav">
+        ☰
+      </button>
+      <!-- Desktop Nav -->
+      <div class="d-none d-lg-block">
+        <ul class="navbar-nav flex-row gap-3">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#program">Our Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#after">After School Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testinomial">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Offcanvas Menu (Left Side) -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+    <div class="offcanvas-header">
+      <a class="navbar-brand d-flex align-items-center text-danger fw-bold" href="#">
+        <img src="assets/images/logo.png" alt="Logo" />
+        <Span> CMA</Span>
+      </a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Our Programs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">After School Programs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- Navbar section start -->
+
+  <!-- hero section start -->
+  <section class="main-banner text-center d-flex flex-column align-items-center justify-content-center" id="home">
+    <h1 class="main-title text-danger">CHEERFUL MIND <br> ACADEMY</h1>
+    <div class="cloud">
+      <p class="description  ">
+        WELCOME TO CHEERFUL MIND ACADEMY <br>
+        A BEACON OF EARLY CHILDHOOD EDUCATION EXCELLENCE <br>
+        WITH A LEGACY FOR OVER 25 YEARS AND 10,000 YOUNG MINDS.
+      </p>
+    </div>
+
+    <button class="btn btn-warning arrow-btn-hero mt-3" id="scrollBtn">
+      <span style="font-size: 24px;">⬇</span>
+    </button>
+    <!-- <button class="btn main-btn mt-3">WELCOME</button> -->
+
+    <!-- Polaroid Images -->
+    <div class="polaroid-container">
+      <div class="polaroid-wrapper rotate-1">
+        <div class="polaroid">
+          <img src="assets/images/hero/h1.png" class="image">
+        </div>
+      </div>
+      <div class="hero-img rotate-2">
+
+        <img src="assets/images/hero/h2.png" class="">
+
+      </div>
+      <div class="polaroid-wrapper rotate-4">
+        <div class="polaroid">
+          <img src="assets/images/hero/3.png" class="image">
+        </div>
+      </div>
+      <div class="hero-img-1 ">
+
+        <img src="assets/images/hero/h5.png" class=" ">
+
+      </div>
+      <div class="polaroid-wrapper rotate-6">
+        <div class="polaroid">
+          <img src="assets/images/hero/8.png" class="image">
+        </div>
+      </div>
+      <div class="polaroid-wrapper rotate-7">
+        <div class="polaroid">
+          <img src="assets/images/hero/7.png" class="image">
+        </div>
+      </div>
+      <div class="polaroid-wrapper rotate-8">
+        <div class="polaroid">
+          <img src="assets/images/hero/6.png" class="image">
+        </div>
+      </div>
+            <div class="polaroid-wrapper rotate-3">
+        <div class="polaroid">
+          <img src="assets/images/hero/h3.png" class="image">
+        </div>
+      </div>
+
+      <!-- <img src="assets/images/kid1.jpeg" class="polaroid rotate-2">
+          <img src="assets/images/kid1.jpeg" class="polaroid rotate-3">
+          <img src="assets/images/kid1.jpeg" class="polaroid rotate-4">
+          <img src="assets/images/kid1.jpeg" class="polaroid rotate-5">
+          <img src="assets/images/kid1.jpeg" class="polaroid rotate-6">
+          <img src="assets/images/kid1.jpeg" class="polaroid rotate-7">
+          <img src="assets/images/kid1.jpeg" class="polaroid rotate-8"> -->
+    </div>
+  </section>
+  <!-- hero section end -->
+
+  <!-- wave image -->
+  <img src="assets/images/wave3.svg" class="wave" alt="">
+
+  <!-- service section start -->
+  <section class="section-service">
+    <div class="text-center">
+      <div class="welcome-btn">WELCOME</div>
+      <h1>WHERE PLAY IS PURPOSEFUL AND LEARNING IS PLAYFUL</h1>
+      <p class="desc ">
+        Our philosophy revolves around the idea that children learn best through play. Play is not just a way for
+        children to pass the time; it is their way of understanding the world, experimenting with ideas, and developing
+        crucial skills.
+      </p>
+    </div>
+
+
+    <div class="slider-container">
+      <button class="arrow-btn arrow-left" onclick="slide(-1)">&#10094;</button>
+
+      <div class="cards-wrapper">
+        <div class="cards-track" id="cardTrack">
+          <div class="card">
+            <img src="assets/images/icons/i1.png" />
+            <h3>INQUIRY-BASED <br> LEARNING</h3>
+            <p>Our curriculum is built around inquiry, encouraging children to ask questions, investigate, and make
+              discoveries through hands-on experiences.
+            </p>
+          </div>
+          <div class="card">
+            <img src="assets/images/icons/i-2.svg" />
+            <h3>PLAY-BASED <br> APPROACH</h3>
+            <p>We believe in the power of play as a natural and effective way for children to learn, develop social
+              skills, and express their creativity.
+            </p>
+          </div>
+          <div class="card">
+            <img src="assets/images/icons/i-3.png" />
+            <h3>CULTURAL <br> DIVERSITY</h3>
+            <p>We celebrate diversity and promote cultural understanding, preparing children to be global citizens with
+              respect for different perspectives and backgrounds.</p>
+          </div>
+          <div class="card">
+            <img src="assets/images/icons/i-4.png" />
+            <h3>1:5 STUDENT <br> TEACHER RATIO</h3>
+            <p>Our small class sizes ensure personalised attention, meaningful interactions, and individualised support
+              for every child's learning journey.</p>
+          </div>
+          <div class="card">
+            <img src="assets/images/icons/i-5.png" />
+            <h3>ECOLOGICAL <br> LEARNING</h3>
+            <p>We instill a sense of environmental responsibility through nature-based learning experiences, gardening
+              activities, and lessons on conservation, nurturing a deep connection with the natural world.</p>
+          </div>
+          <div class="card">
+            <img src="assets/images/icons/i-6.png" />
+            <h3>HOLISTIC <br> EDUCATION</h3>
+            <p>We nurture the physical, emotional, social, and cognitive development of each child, providing a
+              well-rounded education that prepares them for future challenges and opportunities.</p>
+          </div>
+          <div class="card">
+            <img src="assets/images/icons/i-7.png" />
+            <h3>SOCIAL-EMOTIONAL <br> LEARNING</h3>
+            <p>Our curriculum emphasises social-emotional skills such as empathy, cooperation, resilience, fostering
+              positive relationships, emotional well-being, and effective communication among students.</p>
+          </div>
+          <div class="card">
+            <img src="assets/images/icons/i-8.png" />
+            <h3>PARENT <br> PARTNERSHIP</h3>
+            <p>We believe fostering partnerships with parents, involving child's learning. Through collaboration, shared
+              decision-making, create supportive community.</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="arrow-btn arrow-right" onclick="slide(1)">&#10095;</button>
+    </div>
+
+    <div class="dots" id="dotsContainer"></div>
+  </section>
+  <!--service section end  -->
+
+  <!-- wave image -->
+  <img src="assets/images/wave3.svg" style="width: 100%; transform: scaleY(-1);" alt="">
+
+
+  <!-- modal form -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <button class="close-btn">×</button>
+      <div class="lightbox-main">
+        <div class="left-section">
+          <div class="lightbox-header">
+            <h2></h2>
+            <p></p>
+          </div>
+          <div class="icon-section"></div>
+        </div>
+        <div class="right-section">
+          <p></p>
+          <ul></ul>
+        </div>
+      </div>
+      <div class="lightbox-img">
+        <img src="" alt="Program Image">
+      </div>
+      <div class="lightbox-footer">
+        <button class="prev-btn"></button>
+        <button class="next-btn"></button>
+      </div>
+    </div>
+  </div>
+  <!-- modal form end -->
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" class="scroll-to-top">
+    ↑
+  </button>
+
+<a href="#contact" class="enroll-now-btn">Enroll Now</a>
+
+
+  <!-- js links -->
+  <script src="assets/js/gallary.js"></script>
+  <script src="assets/js/service.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <script src="assets/js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+  <script>
+    // Wait for 5 seconds then hide the preloader
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        const preloader = document.getElementById("preloader");
+        preloader.style.opacity = '0';
+        preloader.style.transition = 'opacity 0.5s ease';
+        setTimeout(() => preloader.style.display = 'none', 200); // Fully remove after fade
+      }, 1000); // 5000ms = 5 seconds
+    });
+  </script>
+
+  <script>
+    $("#request_qoute_form").validate({
+      rules: {
+        childName: { required: true },
+        dob:{required: true},
+        parentName: { required: true },
+        relation: { required: true },
+        enquirySource: { required: true },
+        enquiryFor: { required: true },
+        academicYear: { required: true },
+        email: { required: true, email: true },
+        phone: { required: true, minlength: 10, maxlength: 10, digits: true },
+       
+       
+      },
+      messages: {
+        childName: { required: "Please enter your childname" },
+        parentName: { required: "Please enter your parentname" },
+        relation: { required: "Please select  relation" },
+        dob:{ required: "Please enter  date of birth" },
+        enquirySource:{ required: "Please select program you are enquiring for " },
+        enquiryFor : { required: "Please select  enquiry for" },
+        academicYear :{required:"Please enter academic year"},
+        email: {
+          required: "Please enter your email address",
+          email: "Please enter a valid email address",
+        },
+        phone: {
+          required: "Please enter your phone number",
+          minlength: "Phone number must be exactly 10 digits",
+          maxlength: "Phone number must be exactly 10 digits",
+          digits: "Please enter a valid phone number with only digits",
+        }
+       
+
+
+      },
+      submitHandler: function (form, event) {
+        // Prevent the form's default submit action (page reload)
+        event.preventDefault();
+
+
+        // Show SweetAlert loader before the AJAX call starts
+        Swal.fire({
+          title: 'Submitting your request...',
+          text: 'Please wait a moment',
+          allowOutsideClick: false,
+          didOpen: () => {
+            Swal.showLoading(); // Show Swal loader
+          },
+        });
+
+
+        
+        // Create FormData object
+        var formData = new FormData($(form)[0]);
+        $.ajax({
+          type: "POST",
+          url: "https://liltriangle.back4app.io/addEnquiry",
+          data: $(form).serialize(),
+
+
+          success: function (message) {
+            // Close the loader when the request completes
+            Swal.close();
+
+
+            console.log(message);
+            if (message.success === true) {
+              Swal.fire("Successful!", "Your message has been sent!", "success");
+              $(form).trigger("reset");
+            } else {
+              Swal.fire("Error", "There was an issue sending your message.", "error");
+            }
+          },
+          error: function (t) {
+            // Close the loader if an error occurs
+            Swal.close();
+            Swal.fire("Error", "Error submitting form: " + t.statusText, "error");
+          },
+        });
+      },
+    });
+  </script>
+  <script>
+$(document).ready(function(){
+  function initSlider() {
+    if ($(window).width() < 800) {
+      if (!$('.slider').hasClass('slick-initialized')) {
+        $('.slider').slick({
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: true,
+          arrows: false,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          infinite: true,
+          responsive: [
+            {
+              breakpoint: 500,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+          ]
+        });
+      }
+    } else {
+      if ($('.slider').hasClass('slick-initialized')) {
+        $('.slider').slick('unslick'); // destroy on large screens
+      }
+    }
+  }
+
+  initSlider();
+
+  $(window).on('resize', function(){
+    initSlider();
+  });
+});
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

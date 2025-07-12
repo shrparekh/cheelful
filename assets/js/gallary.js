@@ -1,7 +1,7 @@
 
   const galleryData = {
   1: [
-    "assets/images/gallery/p-1.png",
+    "assets/images/p1.jpeg",
     "assets/images/gallery/p-2.png",
     "assets/images/gallery/p-3.png",
     "assets/images/gallery/p-4.png",
