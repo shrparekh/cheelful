@@ -55,7 +55,7 @@
       max-width: 100%;
       max-height: 100%;
       height: auto;
-      width: 70%s;
+      width: 70%;
       display: block;
       margin: auto;
       border: 4px solid #fff;
@@ -110,6 +110,36 @@
     .popup-controls button:hover {
       color: brown;
     }
+    @media (max-width: 500px){
+  
+    .popup-frame img {
+      position: relative;
+      max-width: 100%;
+      max-height: 100%;
+      height: auto;
+      width: 100%;
+      display: block;
+      margin: auto;
+      border: 4px solid #fff;
+      padding: 30px;
+    }
+     .popup-controls button {
+      margin: 0 10px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      font-size: 13px;
+      background-color: rgb(228, 149, 31);
+      color: black;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background 0.3s, color 0.3s;
+      pointer-events: auto;
+      
+}
   </style>
 
 </head>

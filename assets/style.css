@@ -1253,33 +1253,29 @@ background-image: url('../assets/images/coud-removebg-preview.png');
 }
  .polaroid .image {
     display: inline-block;
-    height: 125px; /* Maintains aspect ratio */
+    height: 150px; /* Maintains aspect ratio */
     box-shadow: none; /* Remove inset shadow */
     transition: transform 0.5s ease, filter 0.5s ease; /* Smooth hover effects */
-    /* padding: 15px 10px 15px; */
+    padding: 25px 30px 35px;
 }
  .rotate-2 { top: -390px; left: -12%;  }
   .rotate-1 {  display: none }
   .rotate-4 {  display: none }
   .rotate-8 {
-  top: 0;
-  left: 28%;
-  transform: rotate(-8deg);
+    display: none;
 }
 .rotate-6 {
   top: 0;
-  left: 76%;
+  left: 66%;
   transform: rotate(10deg);
 }
   .rotate-3 {
-    left: 3%;
+    left: 7%;
     transform: rotate(-7deg);
     top: 0;
 }
 .rotate-7 {
-  left: 53%;
-  transform: rotate(8deg);
-  top: 0;
+ display: none;
 }
     .cloud {
         background-image: url(../assets/images/coud-removebg-preview.png);
@@ -2181,14 +2177,14 @@ animation: flipFlop 2s infinite ease-in-out;
 }
 }
 @media (max-width: 600px){
-  .rotate-a-1 { top: -570px; left: 9%; transform: rotate(-20deg); }
-  .rotate-a-4 { top: -570px; right: 7%; transform: rotate(20deg); }
+  .rotate-a-1 { top: -750px; left: 9%; transform: rotate(-20deg); }
+  .rotate-a-4 { top: -750px; right: 7%; transform: rotate(20deg); }
   .rotate-a-2 { bottom: -150px; left: 3%; transform: rotate(10deg); }
   .rotate-a-3 { bottom: -150px; right: 3%; transform: rotate(-13deg); }
   
   .about-section h1 {
     color: #d9324d;
-    font-size: 3.5rem;
+    font-size: 5rem;
     text-align: center;
     font-weight: bolder;
     margin-bottom: 0px;
@@ -2211,14 +2207,14 @@ animation: flipFlop 2s infinite ease-in-out;
   .about-section{
     margin:40px 0px 80px;
   }
-  .rotate-a-1 { top: -650px; left: 9%; transform: rotate(-20deg); }
+  .rotate-a-1 { top: -690px; left: 9%; transform: rotate(-20deg); }
 .rotate-a-2 { bottom: -150px; left: 4%; transform: rotate(10deg); }
 .rotate-a-3 { bottom: -150px; right: 4%; transform: rotate(-13deg); }
-.rotate-a-4 { top: -650px; right: 7%; transform: rotate(20deg); }
+.rotate-a-4 { top: -690px; right: 7%; transform: rotate(20deg); }
 
 .about-section h1 {
   color: #d9324d;
-  font-size: 4rem;
+  font-size: 5rem;
   text-align: center;
   font-weight: bolder;
   margin-bottom: 20px;
@@ -3058,6 +3054,19 @@ animation: flipFlop 2s infinite ease-in-out;
  z-index: -1;
 }
 } 
+@media (max-width: 500px){
+  .testinomial{
+ padding: 110px 0px 10px; 
+ background-image: url('images/bg1.png'); /* Replace with your image URL */
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ height: 100%;
+ margin-top:-80px;
+ background-attachment: fixed;
+ z-index: -1;
+}
+} 
 /* @media (max-width: 800px) {
   .testimonial-grid {
   display: grid;
@@ -3336,6 +3345,7 @@ animation: flipFlop 2s infinite ease-in-out;
   margin-bottom: -50px;
  background-attachment: fixed;
 }
+
 .center-text-a {
   position: absolute;
   top: 85%;
