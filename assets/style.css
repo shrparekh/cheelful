@@ -1513,7 +1513,7 @@ background-image: url('../assets/images/coud-removebg-preview.png');
       position: relative;
     /* top: 200px; */
     bottom: 350px;  
-    left: 150% !important;
+    left: 148% !important;
     width: 40%;
 }
  .polaroid .image {
@@ -1524,7 +1524,7 @@ background-image: url('../assets/images/coud-removebg-preview.png');
     padding: 25px 30px 35px;
 }
 .main-title {
-  font-size: 3.8rem;
+  font-size: 3.4rem;
   line-height: 3.4rem;
   padding-top: 20px;
 }
@@ -1543,8 +1543,8 @@ background-image: url('../assets/images/coud-removebg-preview.png');
         position: relative;
     }
         .description {
-        font-size: 0.8rem;
-        line-height: 0.8rem;
+        font-size: 0.6rem;
+        line-height: 0.6rem;
         color: #176857;
         font-weight: 800;
         font-family: var(--secondary-font);
