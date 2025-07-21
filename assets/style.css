@@ -1497,11 +1497,11 @@ background-image: url('../assets/images/coud-removebg-preview.png');
   }
   .rotate-6 {
   top: 0;
-  left: 65%;
+  left: 60%;
   transform: rotate(10deg);
 }
   .rotate-3 {
-    left: 5%;
+    left: 7%;
     transform: rotate(-7deg);
     top: 0;
 }
