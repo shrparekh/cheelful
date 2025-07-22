@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="assets/style.css">
   <script src="https://kit.fontawesome.com/c80ce35b53.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
   <style>
     .gallery-frame {
@@ -176,7 +177,7 @@
           <div class="left1">
             
             <Span> CMA</Span>
-            <p>Preschool | Daycare | Activitiy Center </p>
+            <p>Preschool | Daycare | Activity Center </p>
           </div>
 
          
@@ -423,8 +424,8 @@
   </div>
 
   <!-- Section Content -->
-  <section class="program-section">
-    <div id="program">
+  <section class="program-section" id="program">
+    <div >
       <div class="welcome-btn">OUR PROGRAMS</div>
 
 
@@ -444,13 +445,28 @@
         </div>
         <div class="box" data-index="3">
           <img src="assets/images/img/KINDERGARTEN.png" loading="lazy"  alt="Kindergarten">
-          <p>KINDERGARTEN</p>
+          <p>KINDERGARDEN </p>
         </div>
       </div>
     </div>
 
 
-    <div id="after">
+  
+    <!-- <div class="row  d-flex justify-content-around">
+      <div class="col-6 gif-container text-center">
+        <img src="assets/images/git1.gif" alt="CMA Animation" class="gif-img">
+      </div>
+       <div class="col-6 gif-container text-center">
+        <img src="assets/images/git1.gif" alt="CMA Animation" class="gif-img">
+      </div>
+    </div> -->
+
+  </section>
+    <section class="program-section" id="after">
+   
+
+
+    <div >
       <div class="welcome-btn-1">AFTER SCHOOL PROGRAMS</div>
       <div class="grid-boxes-responsive">
         <div class="box" data-index="4">
@@ -488,6 +504,7 @@
     </div> -->
 
   </section>
+
 
   <!-- Bottom Wave Image -->
   <div class="wave wave-bottom">
@@ -903,7 +920,7 @@
                   <input type="text" class="form-control" placeholder="Enter Child's Name" name="childName" required>
                 </div>
                 <div class="col-md-6">
-                  <input type="date" class="form-control" placeholder="Enter Date Of Birth" name="dob" required>
+                    <input type="text" id="dob" class="form-control" placeholder="Enter Date of Birth " name="dob" required>
                 </div>
                 <div class="col-md-6">
                   <input type="text" class="form-control" placeholder="Enter Parent Name" name="parentName" required>
@@ -923,7 +940,7 @@
                 </div>                
                 <div class="col-md-6 ">
                   <select class="form-control mt-2" id="enqury" name="enquiryFor" required>
-                    <option value="" disabled selected>Enquiry For</option>
+                    <option value="" disabled selected> Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                   </select>
@@ -1050,7 +1067,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
   <script>
     // Wait for 5 seconds then hide the preloader
@@ -1188,6 +1205,12 @@ $(document).ready(function(){
 
 
 
+<script>
+  flatpickr("#dob", {
+    dateFormat: "d/m/Y", // dd/mm/yyyy format
+    allowInput: true
+  });
+</script>
 
 
 
