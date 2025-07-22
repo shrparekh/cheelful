@@ -2352,7 +2352,7 @@ animation: flipFlop 2s infinite ease-in-out;
   padding: 10px 10px;
   text-align: center;
   color: white;
-  border-radius: 20px;
+ 
   z-index: 1000;
 }
 .program-section .welcome-btn {
